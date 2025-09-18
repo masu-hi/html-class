@@ -9,7 +9,7 @@ body {
 }
 
 .inner {
-    max-width: 1260px;
+    max-width: 960px;
     width: 86.486%;
     margin-right: auto;
     margin-left: auto;
@@ -53,8 +53,72 @@ h1 {
     line-height: 1.4;
 }
 
-.discuttion{
-    
+.discussion {
+    margin: 100px 0;
+}
+
+.discussion h2 {
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.discussion h2::before {
+    content: "";
+    display: block;
+    margin: 0 auto 20px;
+    background-color: #72C9F3;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.discussion h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    border-top: 1px solid #1E1E1E;
+    margin: 20px auto 0;
+}
+
+.discussion .posts {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 6.25%;
+    margin-top: 50px;
+}
+
+.posts p {
+    margin: 20px 0;
+}
+
+.posts a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #F5F5F5;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer {
+    background-color: #1E1E1E;
+    color: #fff;
+}
+
+footer dl {
+    padding: 100px 0;
+}
+
+dl .infomation {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    column-gap: 5.2%;
+    border-bottom: 1px solid #fff;
+}
+
+dt {
+    text-align: center;
 }
 
 @media(width <=640px) {
