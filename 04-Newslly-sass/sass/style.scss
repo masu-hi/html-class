@@ -91,6 +91,12 @@ img {
 
     &__title {
         @include title-sub();
+
+        &--border {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
     }
 }
 
@@ -114,6 +120,7 @@ img {
     display: block;
     width: 160px;
     margin-top: 25px;
+    margin-left: auto;
     padding: 15px;
     background-color: $color-accent;
     color: #fff;
@@ -157,6 +164,14 @@ img {
     &__title {
         @include title-main();
     }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        // column-gap: 40px;
+        // row-gap: 60px;
+        gap: 60px percentage(math.div(40, 800));
+    }
 }
 
 
@@ -172,5 +187,52 @@ img {
 
     &__title {
         @include title-main();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px percentage(math.div(40, 800));
+    }
+
+}
+
+/* about.html
+------------------------------------------------------ */
+
+/* blog------------------------ */
+
+.blog {
+    padding: 0 0 60px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 40px;
+    }
+
+}
+
+/* discovery------------------------ */
+
+.discovery {
+    padding: 60px 0;
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px percentage(math.div(40, 800));
     }
 }
