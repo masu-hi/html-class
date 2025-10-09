@@ -28,3 +28,226 @@ img {
     height: auto;
     vertical-align: bottom;
 }
+
+/* cummon
+--------------------------------------------------------- */
+
+/* header------------- */
+
+.header {
+    padding: 50px 0 80px;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: math.div(24, 24);
+    }
+}
+
+/* gnav------------- */
+
+.gnav {
+    &__list {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        column-gap: 30px;
+    }
+
+    &__item {
+        font-weight: bold;
+    }
+
+    &__item--active {
+        color: $color-main;
+    }
+}
+
+/* footer------------- */
+
+.footer {
+    padding: 100px 0;
+    background-color: $color-bg;
+    text-align: right;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__copy {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: math.div(26, 12);
+        display: block;
+        margin-top: 40px;
+    }
+}
+
+/* btn------------- */
+
+.btn {
+    display: block;
+    width: 200px;
+    padding: 20px 30px;
+    background-color: $color-accent;
+    color: #fff;
+    font-weight: bold;
+    line-height: math.div(15, 15);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.btn--tag {
+    width: 300px;
+    background-color: $color-main;
+    margin-top: 40px;
+}
+
+/* unit------------- */
+
+.unit {
+
+    &__catch {
+        margin-bottom: 20px;
+        color: $color-main;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: math.div(30, 18);
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        color: $color-heading;
+        font-size: 48px;
+        line-height: math.div(58, 48);
+    }
+
+    &__content {
+        margin-bottom: 60px;
+    }
+
+    //要素の中の一番最後の要素の下マージンを0にする
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* card------------- */
+
+.card {
+    border: 1px solid #a3a3a3;
+    border-radius: 20px;
+
+    &__content {
+        padding: 45px 40px 80px;
+    }
+}
+
+/* customer------------- */
+
+.customer {
+    padding-left: 40px;
+    padding-bottom: 45px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: percentage(math.div(20, 470));
+
+    &__name {
+        font-weight: bold;
+    }
+}
+
+/* tag------------- */
+.tag {
+    &__content {
+        margin-top: 20px;
+    }
+}
+
+/* index.html
+--------------------------------------------------------- */
+
+/* spaces------------- */
+
+.spaces {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-template-columns: 440fr 500fr;
+        column-gap: percentage(math.div(60, 1000));
+        align-items: center;
+    }
+}
+
+/* reviews------------- */
+
+.reviews {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__info {
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: percentage(math.div(60, 1000));
+    }
+
+}
+
+/* about.html
+--------------------------------------------------------- */
+
+/* infomation------------- */
+
+.infomation {
+    margin-bottom: 120px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__info {
+        padding-bottom: 60px;
+    }
+
+    &__list {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: percentage(math.div(50, 1000));
+    }
+}
+
+/* styles------------- */
+
+.styles {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-template-columns: 500fr 440fr;
+        column-gap: percentage(math.div(60, 1000));
+        align-items: center;
+    }
+
+    &__info {
+        order: 2;
+    }
+}
