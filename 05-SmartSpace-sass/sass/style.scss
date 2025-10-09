@@ -64,6 +64,11 @@ img {
 
     &__item {
         font-weight: bold;
+        transition: .7s;
+    }
+
+    &__item:hover {
+        color: $color-accent;
     }
 
     &__item--active {
@@ -103,6 +108,11 @@ img {
     line-height: math.div(15, 15);
     border-radius: 20px;
     text-align: center;
+    transition: .7s;
+}
+
+.btn:hover {
+    background-color: $color-text;
 }
 
 .btn--tag {

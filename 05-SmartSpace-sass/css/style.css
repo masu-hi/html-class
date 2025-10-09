@@ -44,6 +44,10 @@ img {
 }
 .gnav__item {
   font-weight: bold;
+  transition: 0.7s;
+}
+.gnav__item:hover {
+  color: #f85a47;
 }
 .gnav__item--active {
   color: #ff9900;
@@ -80,6 +84,11 @@ img {
   line-height: 1;
   border-radius: 20px;
   text-align: center;
+  transition: 0.7s;
+}
+
+.btn:hover {
+  background-color: #31353b;
 }
 
 .btn--tag {
