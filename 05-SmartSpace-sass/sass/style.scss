@@ -155,6 +155,7 @@ img {
 .card {
     border: 1px solid #a3a3a3;
     border-radius: 20px;
+    display: grid;
 
     &__content {
         padding: 45px 40px 80px;
@@ -169,6 +170,7 @@ img {
     display: grid;
     grid-auto-flow: column;
     justify-content: start;
+    align-self: end;
     column-gap: percentage(math.div(20, 470));
 
     &__name {
