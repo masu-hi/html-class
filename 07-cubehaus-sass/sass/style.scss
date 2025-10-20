@@ -1,0 +1,275 @@
+@use "sass:math";
+
+$color-bg: #F4F4F4;
+$color-text: #000;
+$color-accent: #E40465;
+$color-main: #2F2F2F;
+$color-border: #a3a3a3;
+
+$font-family-base: "游ゴシック", "Yu Gothic", Helvetica, Arial, sans-serif;
+$font-family-accent: Helvetica, "游ゴシック", "Yu Gothic", Arial, sans-serif;
+
+$bs: (
+    "desktop": 640px,
+);
+
+@mixin inner($mw: 1000px, $w: percentage(math.div(560, 640))) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin mq($b: desktop) {
+    @media(#{map-get($bs,$b)}<=width) {
+        @content;
+    }
+}
+
+@mixin title-main($t) {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 60px;
+
+    &::before {
+        content: $t;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-family: $font-family-accent;
+        font-weight: normal;
+        line-height: 1;
+        text-align: center;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100px;
+        margin: 25px auto 0;
+        border: 2px solid $color-accent;
+    }
+}
+
+body {
+    color: $color-text;
+    font-size: 14px;
+    line-height: math.div(34, 14);
+    letter-spacing: #{math.div(50,1000)}em;
+    font-family: $font-family-base;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* common
+----------------------------------------------------------- */
+
+/* header */
+
+.header {
+    padding: 40px 0;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        color: $color-main;
+        font-size: 24px;
+        font-family: $font-family-accent;
+        font-weight: bold;
+        line-height: math.div(29, 24);
+        letter-spacing: #{math.div(100,1000)}em;
+    }
+}
+
+/* gnav */
+
+.gnav {
+    font-family: $font-family-accent;
+    font-size: 12px;
+    line-height: math.div(14, 12);
+
+    &__list {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 30px;
+    }
+
+    &__item--active {
+        color: $color-accent;
+    }
+
+    a {
+        transition: color 0.7s;
+    }
+
+    a:hover {
+        color: $color-accent;
+    }
+}
+
+/* footer */
+
+.footer {
+    background-color: $color-main;
+    padding: 80px 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: math.div(20, 12);
+    text-align: center;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+/* mainvisual */
+
+.mainvisual {
+    margin-bottom: 80px;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+/* philosophy */
+
+.philosophy {
+    text-align: center;
+    margin-bottom: 120px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("PHILOSOPHY"
+        );
+    }
+
+    &__text {
+        display: grid;
+        row-gap: 60px;
+        word-break: keep-all;
+    }
+}
+
+/* works */
+
+.works {
+    margin-bottom: 120px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("WORKS"
+        );
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 60px;
+
+        @include mq() {
+            grid-auto-flow: column;
+            column-gap: percentage(math.div(80, 1000));
+        }
+    }
+}
+
+.unit {
+    &__title {
+        margin: 30px 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: math.div(31, 18);
+    }
+
+    &__content {
+        line-height: math.div(24, 14);
+    }
+
+    &__pic {
+        position: relative;
+    }
+
+}
+
+.new::after {
+    content: "NEW";
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: $color-accent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* voice */
+
+.voice {
+    background-color: $color-bg;
+    padding: 80px 0 120px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main("VOICE"
+        );
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 60px;
+
+        @include mq() {
+            grid-auto-flow: column;
+            column-gap: percentage(math.div(80, 1000));
+        }
+    }
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid $color-border;
+    border-radius: 20px;
+    padding: 45px 40px 40px;
+
+    &__content {
+        margin-bottom: 40px;
+        line-height: math.div(24, 14);
+    }
+}
+
+.customer {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    column-gap: percentage(math.div(20, 380));
+    align-self: end;
+    line-height: math.div(24, 14);
+
+    &__company {
+        font-weight: bold;
+    }
+}
